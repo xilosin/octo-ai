@@ -3,23 +3,32 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 
+import { CrispProvider } from '@/providers/crisp-provider';
+import { ModalProvider } from '@/providers/modal-provider';
+import { ToasterProvider } from '@/providers/toaster-provider';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'OctoAI',
-  description: 'Multi-purpose SaaS AI',
+	title: 'OctoAI',
+	description: 'Multi-purpose SaaS AI',
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </ClerkProvider>
-  );
+	return (
+		<ClerkProvider>
+			<html lang="en">
+				<CrispProvider />
+				<body className={inter.className}>
+					<ModalProvider />
+					<ToasterProvider />
+					{children}
+				</body>
+			</html>
+		</ClerkProvider>
+	);
 }
