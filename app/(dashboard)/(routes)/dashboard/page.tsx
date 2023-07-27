@@ -20,8 +20,8 @@ const DashboardPage = () => {
 					className="text-muted-foreground font-light text-sm 
 					md:text-lg text-center"
 				>
-					Chat with the smartest AI - Experience the power
-					of AI
+					Let <span className="text-orange-400">Octo</span> generate
+					your content
 				</p>
 			</div>
 			<div className="px-4 md:px-20 lg:px-32 space-y-4">
@@ -34,18 +34,11 @@ const DashboardPage = () => {
 					>
 						<div className="flex items-center gap-x-4">
 							<div
-								className={cn(
-									`p-2 w-fit rounded-md`,
-									tool.bgColor
-								)}
+								className={cn(`p-2 w-fit rounded-md`, tool.bgColor)}
 							>
-								<tool.icon
-									className={cn(`w-8 h-8`, tool.color)}
-								/>
+								<tool.icon className={cn(`w-8 h-8`, tool.color)} />
 							</div>
-							<div className="font-semibold">
-								{tool.label}
-							</div>
+							<div className="font-semibold">{tool.label}</div>
 						</div>
 						<ArrowRight className="w-5 h-5" />
 					</Card>
