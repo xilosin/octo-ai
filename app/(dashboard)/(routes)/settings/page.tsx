@@ -23,9 +23,7 @@ const SettingsPage = async () => {
 						? 'You are currently subscribed to Pro'
 						: 'You are currently on a free plan'}
 				</div>
-				<SubscriptionButton isSubscribed={isSubscribed}>
-
-				</SubscriptionButton>
+				<SubscriptionButton isSubscribed={isSubscribed} />
 			</div>
 		</div>
 	);
